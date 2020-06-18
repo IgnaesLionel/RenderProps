@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Vegeta from './Vegeta';
+import Goku from './Goku';
+import AddHits from './addHits'
 
-function App() {
-  return (
+class App extends Component {
+  render() {
+    return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <h1> Goku vs Vegeta</h1>
+      <AddHits render={(hits, addOne) => (
+          <Vegeta hits={hits} addOne={addOne} name="Vegeta"/>
+          )}/>
+      <AddHits render={(hits, addOne) => (
+              <Goku hits={hits} addOne={addOne} name="Goku"/>
+            )}/>
     </div>
-  );
-}
+)}}
 
 export default App;
